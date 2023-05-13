@@ -56,15 +56,19 @@ class RegisterUserViewController: UIViewController {
     
         //validation
         guard isInputCorrect(rname, type: "name") else {
-              validationMessage(msg: "Name must have at least 2 characters", controller: self)
-              return
+            validationMessage(msg: "Name must have at least 2 characters", controller: self)
+            return
+        }
+        guard isInputCorrect(raddress, type: "address") else {
+            validationMessage(msg: "Address must have at least 6 characters", controller: self)
+            return
         }
         guard isInputCorrect(remail, type: "email") else {
-            validationMessage(msg: "Invalid email format", controller: self)
+            validationMessage(msg: "Invalid email format. Sample format: a@sample.com", controller: self)
             return
         }
         guard isInputCorrect(rphone, type: "phone") else {
-            validationMessage(msg: "Invalid phone number format", controller: self)
+            validationMessage(msg: "Invalid phone number format. Must have 10 characters", controller: self)
             return
         }
         guard isInputCorrect(rusername, type: "username") else {

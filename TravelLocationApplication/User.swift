@@ -95,6 +95,8 @@ func isInputCorrect(_ input: String, type: String) -> Bool {
     switch type {
     case "name":
         return input.count >= 2
+    case "address":
+        return input.count >= 6
     case "username":
         return input.count >= 6
     case "email":
