@@ -23,12 +23,14 @@ class AddNewSiteViewController: UIViewController, UIImagePickerControllerDelegat
         // Do any additional setup after loading the view.
     }
     
+    //for uploading image
     @IBAction func uploadImageButton(_ sender: UIButton) {
         let sitePick = UIImagePickerController()
+        //getting all photos from the photolibrary
         sitePick.sourceType = .photoLibrary
         sitePick.delegate = self
         sitePick.allowsEditing = true
-        //showing imagePicker to screen
+        //showing sitePick to screen
         present(sitePick, animated: true, completion: nil)
     }
     

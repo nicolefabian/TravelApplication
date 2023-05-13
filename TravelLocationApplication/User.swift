@@ -75,7 +75,6 @@ func checkValidation(textFields: [UITextField]) -> Bool
         {
             return true
         }
-        
     }
     return false
 }
@@ -89,7 +88,8 @@ func validationMessage (msg: String, controller:UIViewController){
     alert.addAction(validateAction)
     controller.present(alert, animated: true, completion: nil)
 }
-    
+
+//func to check each textfield in RegisterUserViewController
 func isInputCorrect(_ input: String, type: String) -> Bool {
     let predicateFormat: String
     switch type {
