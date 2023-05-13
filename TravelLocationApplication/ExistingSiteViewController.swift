@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ExistingSiteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource , UIImagePickerControllerDelegate, UISearchBarDelegate {
+class ExistingSiteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet weak var sitesTable: UITableView!
     
