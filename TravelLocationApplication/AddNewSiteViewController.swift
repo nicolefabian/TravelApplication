@@ -42,6 +42,7 @@ class AddNewSiteViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     @IBAction func addNewSiteImage(_ sender: UIButton) {
+        //getting the input
         let sname = nameTextField.text!
         let saddress = addressTextField.text!
         let sdescription = descriptionTextField.text!

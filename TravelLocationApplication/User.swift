@@ -19,7 +19,7 @@ class User : NSObject, NSCoding {
     var username: String
     var password: String
     
-    //CONSTRUCTOR
+    //constructor
     init(name:String, address:String, email:String, phone: String, username: String, password: String) {
         self.name = name
         self.address = address
@@ -29,7 +29,7 @@ class User : NSObject, NSCoding {
         self.password = password
     }
     
-    //ENCODING --> BINARY
+    //encoding the data
     func encode(with coder: NSCoder) {
         coder.encode(name, forKey: "name")
         coder.encode(address, forKey: "address")
@@ -39,7 +39,7 @@ class User : NSObject, NSCoding {
         coder.encode(password, forKey: "password")
     }
     
-    //DECODING --> BACK TO TEXT
+    //decoding user data
     required init?(coder: NSCoder) {
         self.name = coder.decodeObject(forKey: "name") as! String
         self.address = coder.decodeObject(forKey: "address") as! String
@@ -51,7 +51,8 @@ class User : NSObject, NSCoding {
 }
 
 //--global functions for user
-//reading the User data
+
+//getting all the data from user list
 func readData()  -> [User] {
     if UserDefaults.standard.value (forKey: "usersData") != nil
     {

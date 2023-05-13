@@ -40,7 +40,7 @@ class RegisterUserViewController: UIViewController {
     }
     
     @IBAction func registerButton(_ sender: Any) {
-        // validationMessage(msg: "Register Account Successful", controller: self)
+  
         if checkValidation(textFields: [nameTextField, phoneTextField, emailTextField, addressTextField, usernameTextField, passwordTextField]) == false {
             validationMessage(msg: "Textfields cannot be empty", controller: self)
             print("checkEmptyField func works")
@@ -54,6 +54,7 @@ class RegisterUserViewController: UIViewController {
         let rusername = usernameTextField.text!
         let rpassword = passwordTextField.text!
     
+        //validation
         guard isInputCorrect(rname, type: "name") else {
               validationMessage(msg: "Name must have at least 2 characters", controller: self)
               return
@@ -80,7 +81,7 @@ class RegisterUserViewController: UIViewController {
         //creating user object
         let user = User (name: rname, address: raddress, email: remail, phone: rphone, username: rusername, password: rpassword)
         
-        //validation
+        //calling isUserInList to check if username matches 
         if isUserInList() == true {
             validationMessage(msg: "Username already exists", controller: self)
         } else {
@@ -89,7 +90,7 @@ class RegisterUserViewController: UIViewController {
             
             let data = try! NSKeyedArchiver.archivedData(withRootObject: usersList, requiringSecureCoding: false)
             UserDefaults.standard.set(data, forKey: "usersData")
-            validationMessage(msg: "Registered Successfully!", controller: self)
+            validationMessage(msg: "Registered Successfully! Return to login", controller: self)
             // Empty out the text field inputs
             nameTextField.text = ""
             addressTextField.text = ""

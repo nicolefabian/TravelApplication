@@ -6,18 +6,6 @@
 //
 
 import UIKit
-//global function
-func readSiteData()  -> [Site] {
-    if UserDefaults.standard.value (forKey: "sitesData") != nil
-    {
-        let data = UserDefaults.standard.value(forKey: "sitesData") as! Data
-        let sitesData = try! NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data)
-        return sitesData as! [Site]
-    } else
-    {
-        return [Site] ()
-    }
-}
 
 class ExistingSiteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource , UIImagePickerControllerDelegate, UISearchBarDelegate {
     
@@ -39,7 +27,6 @@ class ExistingSiteViewController: UIViewController, UITableViewDelegate, UITable
     private func setUpTable() {
         siteSearchBar.delegate = self
     }
-    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -69,7 +56,7 @@ class ExistingSiteViewController: UIViewController, UITableViewDelegate, UITable
         }
         //for every site in the sitesData
         for eachSite in sitesData {
-            //if the sitename matches with the searchtext input
+            //if the sitename and date saved/added matches with the searchtext input
             if eachSite.siteName.lowercased().contains(searchText.lowercased()) || eachSite.siteDate.lowercased().contains(searchText.lowercased()) {
                 //add it to the searchedSites
                 searchedSites.append(eachSite)

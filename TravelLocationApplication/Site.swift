@@ -48,13 +48,26 @@ func getSiteDate() -> String
 {
     // get current date
     let date = Date()
-    // formatted date
     let dateFormatter = DateFormatter()
     dateFormatter.timeZone = .current
     dateFormatter.locale = .current
+    // sample date input : 13/05/2023
     dateFormatter.dateFormat = "dd/MM/yyyy"
     // converting date to string
     return dateFormatter.string(from: date)
 }
 
+//getting the data from the site list
+func readSiteData()  -> [Site] {
+    if UserDefaults.standard.value (forKey: "sitesData") != nil
+    {
+        let data = UserDefaults.standard.value(forKey: "sitesData") as! Data
+        let sitesData = try! NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data)
+        return sitesData as! [Site]
+    } else
+    {
+        //returning empty list if no data 
+        return [Site] ()
+    }
+}
     
