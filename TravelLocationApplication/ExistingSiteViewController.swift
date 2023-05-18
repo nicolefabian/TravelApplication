@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+var site : Site!
 class ExistingSiteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet weak var sitesTable: UITableView!
@@ -20,7 +20,6 @@ class ExistingSiteViewController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         // Do any additional setup after loading the view.
      
-        //siteList = all the sites data
         searchedSites = sitesData
     }
     
@@ -42,8 +41,19 @@ class ExistingSiteViewController: UIViewController, UITableViewDelegate, UITable
         cell.sitePicImageView.image = searchedSites[indexPath.row].sitePicture
         cell.siteAddressLabel.text = searchedSites[indexPath.row].siteAddress
         cell.descriptionLabel.text = searchedSites[indexPath.row].siteDescription
+        cell.siteDateLabel.text = searchedSites[indexPath.row].siteDate
         
         return cell
+    }
+    
+    
+    //Selecting an item in a row
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+  
+        site = searchedSites[indexPath.row]
+        
+        //go to new screen using segue for ExistingSiteDetailViewController
+        performSegue(withIdentifier: "siteSegue", sender: self)
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -57,7 +67,7 @@ class ExistingSiteViewController: UIViewController, UITableViewDelegate, UITable
         //for every site in the sitesData
         for eachSite in sitesData {
             //if the sitename and date saved/added matches with the searchtext input
-            if eachSite.siteName.lowercased().contains(searchText.lowercased()) || eachSite.siteDate.lowercased().contains(searchText.lowercased()) {
+            if eachSite.siteName.lowercased().contains(searchText.lowercased()) || eachSite.siteDate.lowercased().contains(searchText.lowercased()){
                 //add it to the searchedSites
                 searchedSites.append(eachSite)
             }

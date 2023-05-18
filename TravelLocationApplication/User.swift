@@ -96,9 +96,9 @@ func isInputCorrect(_ input: String, type: String) -> Bool {
     case "name":
         return input.count >= 2
     case "address":
-        return input.count >= 6
+        return input.count >= 4
     case "username":
-        return input.count >= 6
+        return input.count >= 4
     case "email":
         predicateFormat = "SELF MATCHES %@"
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"

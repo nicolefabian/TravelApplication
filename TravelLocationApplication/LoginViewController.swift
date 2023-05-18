@@ -20,12 +20,10 @@ class ViewController: UIViewController {
     @IBAction func loginButton(_ sender: UIButton) {
         let username = usernameTextField.text!
         let password = passwordTextField.text!
-        // Validate both textfields
         
-        // validationMessage(msg: "Register Account Successful", controller: self)
+        // Validate both textfields
         if checkValidation(textFields: [usernameTextField, passwordTextField]) == false {
             validationMessage(msg: "Please fill in both fields", controller: self)
-            print("checkEmptyField func works")
             return
         }
         else {
@@ -38,6 +36,7 @@ class ViewController: UIViewController {
             for us in users {
                 if(us.username == username) && (us.password == password) {
                     found = us
+                    //SAMPLE USER: username: admin, password: admin123
                     //only for validation console
                     print(us.name)
                     print(us.username)
@@ -52,7 +51,7 @@ class ViewController: UIViewController {
                 }
             }
             
-            //if matching user found
+            //if no matching user found
             if(found == nil) {
                 validationMessage(msg: "No user found", controller: self)
                 return
@@ -60,6 +59,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //function to navigate to home
     func navigationMessage(msg: String, controller:UIViewController){
 
         let alert = UIAlertController(title: "", message: msg , preferredStyle: .alert)

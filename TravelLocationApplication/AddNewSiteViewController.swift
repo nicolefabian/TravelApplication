@@ -39,7 +39,7 @@ class AddNewSiteViewController: UIViewController, UIImagePickerControllerDelegat
         //selecting image
         let pic = info[.originalImage] as! UIImage
         siteImage.image = pic
-        //go back to the homepage
+        //go back to the page
         dismiss(animated: true, completion: nil)
     }
     
@@ -51,24 +51,29 @@ class AddNewSiteViewController: UIViewController, UIImagePickerControllerDelegat
         let spic = siteImage.image
         let sdate = getSiteDate()
         
-        //created site object
-        let sites = Site(siteName: sname, siteAddress: saddress, siteDescription: sdescription, sitePicture: spic!, siteDate: sdate)
-        
-        //adding each site object to the siteList
-        siteList = readSiteData()
-        siteList.append(sites)
-        
-        let data = try! NSKeyedArchiver.archivedData(withRootObject: siteList, requiringSecureCoding: false)
-        UserDefaults.standard.set(data, forKey: "sitesData")
-        validationMessage(msg: "Added new site successfully!", controller: self)
-        //for validation
-        print("Added site successfully!")
-        
-        //clearing the values
-        nameTextField.text = ""
-        addressTextField.text = ""
-        descriptionTextField.text = ""
-        siteImage.image = nil
+        if(checkValidation(textFields: [nameTextField, addressTextField, descriptionTextField]) && siteImage.image != nil)
+        {
+            //created site object
+            let sites = Site(siteName: sname, siteAddress: saddress, siteDescription: sdescription, sitePicture: spic!, siteDate: sdate)
+            
+            //adding each site to the siteList
+            siteList = readSiteData()
+            siteList.append(sites)
+            
+            let data = try! NSKeyedArchiver.archivedData(withRootObject: siteList, requiringSecureCoding: false)
+            UserDefaults.standard.set(data, forKey: "sitesData")
+            validationMessage(msg: "Added new site successfully!", controller: self)
+            //for validation
+            print("Added site successfully!")
+            
+            //clearing the values
+            nameTextField.text = ""
+            addressTextField.text = ""
+            descriptionTextField.text = ""
+            siteImage.image = nil
+        } else {
+            validationMessage(msg: "Missing fields", controller: self)
+        }
     }
 }
 

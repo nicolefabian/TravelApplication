@@ -16,6 +16,7 @@ class ExistingSiteTableViewCell: UITableViewCell {
     @IBOutlet weak var sitePicImageView: UIImageView!
     
     
+    @IBOutlet weak var siteDateLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

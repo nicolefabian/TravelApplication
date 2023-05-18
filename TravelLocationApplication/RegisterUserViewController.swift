@@ -7,7 +7,6 @@
 
 import UIKit
 
-//if outside class then funciton or variable becomes global
 //list to save all users
 var usersList = [User]()
 
@@ -27,7 +26,7 @@ class RegisterUserViewController: UIViewController {
 
    
 
-    //calls the readData() function to check user data
+    //for the readData() function to check user data
     var readuserListData = readData()
     //func to check if a user exists in the user list
     func isUserInList() -> Bool {
@@ -43,7 +42,6 @@ class RegisterUserViewController: UIViewController {
   
         if checkValidation(textFields: [nameTextField, phoneTextField, emailTextField, addressTextField, usernameTextField, passwordTextField]) == false {
             validationMessage(msg: "Textfields cannot be empty", controller: self)
-            print("checkEmptyField func works")
             return
         }
         
@@ -60,7 +58,7 @@ class RegisterUserViewController: UIViewController {
             return
         }
         guard isInputCorrect(raddress, type: "address") else {
-            validationMessage(msg: "Address must have at least 6 characters", controller: self)
+            validationMessage(msg: "Address must have at least 4 characters", controller: self)
             return
         }
         guard isInputCorrect(remail, type: "email") else {
@@ -72,7 +70,7 @@ class RegisterUserViewController: UIViewController {
             return
         }
         guard isInputCorrect(rusername, type: "username") else {
-              validationMessage(msg: "Username must have at least 6 characters", controller: self)
+              validationMessage(msg: "Username must have at least 4 characters", controller: self)
               return
         }
         guard isInputCorrect(rpassword, type: "password") else {

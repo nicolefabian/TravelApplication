@@ -14,6 +14,7 @@
 		BB2D37282A0B4EF40009868A /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2D37272A0B4EF40009868A /* Site.swift */; };
 		BB2D372A2A0B51DA0009868A /* ExistingSiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2D37292A0B51DA0009868A /* ExistingSiteViewController.swift */; };
 		BB2D372E2A0B56850009868A /* ExistingSiteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2D372D2A0B56850009868A /* ExistingSiteTableViewCell.swift */; };
+		BB5D88D02A149D0700E4AC1D /* ExistingSiteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5D88CF2A149D0700E4AC1D /* ExistingSiteDetailViewController.swift */; };
 		BBA0B4AF2A09DF87002C8CF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA0B4AE2A09DF87002C8CF6 /* AppDelegate.swift */; };
 		BBA0B4B12A09DF87002C8CF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA0B4B02A09DF87002C8CF6 /* SceneDelegate.swift */; };
 		BBA0B4B32A09DF87002C8CF6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA0B4B22A09DF87002C8CF6 /* LoginViewController.swift */; };
@@ -47,6 +48,7 @@
 		BB2D37272A0B4EF40009868A /* Site.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
 		BB2D37292A0B51DA0009868A /* ExistingSiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingSiteViewController.swift; sourceTree = "<group>"; };
 		BB2D372D2A0B56850009868A /* ExistingSiteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingSiteTableViewCell.swift; sourceTree = "<group>"; };
+		BB5D88CF2A149D0700E4AC1D /* ExistingSiteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingSiteDetailViewController.swift; sourceTree = "<group>"; };
 		BBA0B4AB2A09DF87002C8CF6 /* TravelLocationApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelLocationApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA0B4AE2A09DF87002C8CF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBA0B4B02A09DF87002C8CF6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				BB2D37272A0B4EF40009868A /* Site.swift */,
 				BB2D37292A0B51DA0009868A /* ExistingSiteViewController.swift */,
 				BB2D372D2A0B56850009868A /* ExistingSiteTableViewCell.swift */,
+				BB5D88CF2A149D0700E4AC1D /* ExistingSiteDetailViewController.swift */,
 			);
 			path = TravelLocationApplication;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB1BA9CE2A0AF3DE0041EF07 /* RegisterUserViewController.swift in Sources */,
+				BB5D88D02A149D0700E4AC1D /* ExistingSiteDetailViewController.swift in Sources */,
 				BBA0B4B32A09DF87002C8CF6 /* LoginViewController.swift in Sources */,
 				BB2D372A2A0B51DA0009868A /* ExistingSiteViewController.swift in Sources */,
 				BB2D372E2A0B56850009868A /* ExistingSiteTableViewCell.swift in Sources */,
